@@ -33,13 +33,13 @@ class SearchViewModel: ObservableObject {
         setupObservers()
     }
 
-    /// Clears our search text so user doesn't need to backspace away
     // TODO JEL: <#comment#>
+    // TODO JEL: is loading
+    /// Clears our search text so user doesn't need to backspace away
 //    func clear() {
 //        searchText = ""
 //    }
 
-    // TODO JEL: is loading
 
     // MARK: - private functions
     
@@ -71,7 +71,9 @@ class SearchViewModel: ObservableObject {
         }
     }
 
-    // TODO JEL: Docs
+    // TODO JEL: input sanitization
+    /// Performs the actual search by hitting the Flickr API
+    /// - Parameter tags: Tags string to search for. We expect this to be comma-separated
     private func doSearch(tags: String) async {
         do {
             let request = try RequestType.search(tags: tags).request

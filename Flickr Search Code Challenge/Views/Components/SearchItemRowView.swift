@@ -15,7 +15,8 @@ struct SearchItemRowView: View {
 
     var body: some View {
         HStack {
-            // TODO JEL: It's a known issue that AsyncImage doesn't cache
+            // TODO JEL: It's a known issue that AsyncImage doesn't cache, so as you scroll the list up and down it's
+            // going reload these thumbnails.
             AsyncImage(url: URL(string: thumbnailUrl)) { image in
                 image
                     .resizable()
@@ -27,9 +28,9 @@ struct SearchItemRowView: View {
             }
 
             VStack(alignment: .leading) {
-                // TODO JEL: These titles have varying lengths. I would probably think more about adding ... and/or
-                // specifying a line limit, but since we don't have designers or specific requirements around this
-                // I'll let it go for now.
+                // TODO JEL: These titles have varying lengths. I would probably think more about adding ellipses
+                // and/or specifying a line limit, but since we don't have designers or specific requirements around
+                // this I'll let it go for now.
                 Text(title)
                     .font(.subheadline)
                     .bold()
@@ -47,7 +48,6 @@ struct SearchItemRowView: View {
 
 #Preview {
     SearchItemRowView(
-//        thumbnailUrl: "https://live.staticflickr.com/65535/53275500189_fe7b07263f_m.jpg",
         thumbnailUrl: "https://live.staticflickr.com//65535//53284746080_c9d782dac8_m.jpg",
         title: "North American Porcupine",
         author: "nobody@flickr.com (Tom Kilroy)", 

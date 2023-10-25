@@ -27,7 +27,7 @@ struct SearchItemDetailsView: View {
     /// Tags of the image, separated by space
     let tags: String
 
-    // TODO JEL: We could move this into a view model to make it testable
+    // TODO JEL: We should move this into a view model to make it testable
     /// List of tag strings for this image
     var tagsList: [String] {
         tags.components(separatedBy: " ")
@@ -57,9 +57,9 @@ struct SearchItemDetailsView: View {
                     Text(dateTaken.formatted(date: .abbreviated, time: .shortened))
                         .font(.footnote)
 
-                        // TODO JEL: This is not ideal. Tags can vary in width and we don't know how many to display on a
-                        // row, but for a demo I think it's okay. Also right now we are not allowing the text to wrap or
-                        // stretch because of how Grid works
+                        // TODO JEL: This is not ideal. Tags can vary in width and we don't know how many to display on 
+                        // a row, but for a demo I think it's okay. Also right now we are not allowing the text to wrap
+                        // or stretch because of how Grid works. 
                         LazyVGrid(
                             columns: [GridItem(.adaptive(minimum: 100))],
                             spacing: 5
