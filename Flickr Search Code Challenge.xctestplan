@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "FC726EAE-AF6B-4DEC-BAA9-16FAC46F9073",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Flickr Search Code Challenge.xcodeproj",
+      "identifier" : "268164372AE92460006B8CCD",
+      "name" : "Flickr Search Code Challenge"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Flickr Search Code Challenge.xcodeproj",
+        "identifier" : "268164472AE92461006B8CCD",
+        "name" : "Flickr Search Code ChallengeTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Flickr Search Code Challenge.xcodeproj",
+        "identifier" : "268164512AE92461006B8CCD",
+        "name" : "Flickr Search Code ChallengeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

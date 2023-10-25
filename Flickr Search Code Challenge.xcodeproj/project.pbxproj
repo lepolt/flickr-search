@@ -63,6 +63,7 @@
 		268164752AE94113006B8CCD /* SearchItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemDetailsView.swift; sourceTree = "<group>"; };
 		268164782AE945D2006B8CCD /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		2681647D2AE94F14006B8CCD /* TagModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModifier.swift; sourceTree = "<group>"; };
+		2681647F2AE978AE006B8CCD /* Flickr Search Code Challenge.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Flickr Search Code Challenge.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 		2681642F2AE92460006B8CCD = {
 			isa = PBXGroup;
 			children = (
+				2681647F2AE978AE006B8CCD /* Flickr Search Code Challenge.xctestplan */,
 				2681643A2AE92460006B8CCD /* Flickr Search Code Challenge */,
 				2681644B2AE92461006B8CCD /* Flickr Search Code ChallengeTests */,
 				268164552AE92461006B8CCD /* Flickr Search Code ChallengeUITests */,
