@@ -5,10 +5,14 @@ import Foundation
 
 /// struct to define a search item returned from the Flickr API
 struct SearchItem {
+    struct Media: Decodable {
+        let m: String
+    }
+
     let title: String
     let link: String
-    let media: String
-    let date_taken: String
+    let media: Media
+    let date_taken: Date
     let description: String
     let published: Date
     let author: String
@@ -19,8 +23,14 @@ struct SearchItem {
 // MARK: Extensions
 
 extension SearchItem: Decodable {}
+
+extension SearchItem: Identifiable {
+    /// Unique identifier for a `SearchItem`. This isn't specified in the API docs but link should be unique.
+    var id: String { link }
+}
 // TODO JEL: parse author_id as Int
 // TODO JEL: make `tags` property array. Custom decoder
+// TODO JEL: I don't like _ in variable names, so I might change that but again it requires a custom decoder
 
 // MARK: - SearchItemsResponse
 
@@ -36,4 +46,4 @@ struct SearchItemsResponse {
 
 // MARK: Extensions
 
-extension SearchItemsResponse {}
+extension SearchItemsResponse: Decodable {}
