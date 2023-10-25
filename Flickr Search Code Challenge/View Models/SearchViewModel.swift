@@ -89,7 +89,7 @@ class SearchViewModel: ObservableObject {
             }
 
         } catch let error as NSError {
-            print("Error searching: \(error), \(error.userInfo)")
+            print("Error searching for `\(tags)`: \(error), \(error.userInfo)")
         }
     }
 }

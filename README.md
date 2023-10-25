@@ -37,3 +37,11 @@ Again due to the time contraints, I simply did not have enough time to build eve
 - Loading indicator when searching for images. It would enhance the user experience if they had feedback to indicated when the was fetching data. 
 - Input sanitization. Right now we allow the user to search for anything, and if they choose to search for multiple tags we don't verify that they are separated by a comma.
 - More accessibility testing. I'm using native SwiftUI controls so most things are handled okay with VoiceOver. One thing I might improve upon is some custom handling of the list of tags, or reading the description of a field like "author" or image size.
+
+## Known Issues
+As I was testing, I found an issue with some bad data being sent back as I was searching for "house" If you search for "hou" there is at least one result with an invalid ISO8601 date for the `date_taken` parameter. The date string for parameter sent from the API is "-0001-11-30T00:00:00-08:00" The Swift `JSONDecoder` cannot parse this because it's not a valid date, and our code will throw 
+
+To fix this issue I would do two things:
+1. Make the `date_taken` parameter optional
+1. Create a custom decoder on my `SearchItem` struct. If decoding the date failed, I would set the value to `nil`
+1. I would make the same change to any other Date values (ie, `published`)
