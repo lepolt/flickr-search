@@ -13,7 +13,11 @@ This code challenge allows a user to search the Flickr API for images, which wil
 There are a few unit tests included in the project. To run the unit tests:
 1. Product --> Test (or Cmd + U)
 
-# Demo
+## Demo
+![App demo](./demo.gif)
+
+## Code Challenge Commentary
+It was a conscious decision to include a little addional metadata in the main List after searching for images. I realize I could have used a grid and ONLY displayed the thumbnails, but since I am using a List component it made sense to add a bit of information to make it look a bit more approachable.
 
 ## Code Commentary
 Since this is a time-boxed code challenge, I chose to make some technical decisions in favor of functionality to make sure the app hit all acceptance criteria. There are `TODO JEL`s in the code that call attention to these items. Before calling a feature complete, I would typically address all remaining TODOs.
@@ -32,4 +36,4 @@ Again due to the time contraints, I simply did not have enough time to build eve
 - Design. I am not a good designer :) I would not want to push this app to production without some nice UI changes. 
 - Loading indicator when searching for images. It would enhance the user experience if they had feedback to indicated when the was fetching data. 
 - Input sanitization. Right now we allow the user to search for anything, and if they choose to search for multiple tags we don't verify that they are separated by a comma.
-- More accessibility testing. I'm using native SwiftUI controls so most things are handled okay with voice over. One thing I might improve upon is some custom handling of the list of tags, or reading the description of a field like "author" or image size.
+- More accessibility testing. I'm using native SwiftUI controls so most things are handled okay with VoiceOver. One thing I might improve upon is some custom handling of the list of tags, or reading the description of a field like "author" or image size.
