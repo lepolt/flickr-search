@@ -5,7 +5,7 @@ import Foundation
 
 /// struct to define a search item returned from the Flickr API
 struct SearchItem {
-    struct Media: Decodable {
+    struct Media: Decodable, Hashable {
         let m: String
     }
 
@@ -28,7 +28,10 @@ extension SearchItem: Identifiable {
     /// Unique identifier for a `SearchItem`. This isn't specified in the API docs but link should be unique.
     var id: String { link }
 }
-// TODO JEL: parse author_id as Int
+
+/// Hashable so we can use `NavigationPath`
+extension SearchItem: Hashable {}
+
 // TODO JEL: make `tags` property array. Custom decoder
 // TODO JEL: I don't like _ in variable names, so I might change that but again it requires a custom decoder
 

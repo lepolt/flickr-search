@@ -45,19 +45,19 @@ class SearchViewModel: ObservableObject {
     
     /// Sets up all our observers so we can react when values change.
     private func setupObservers() {
-        // TODO JEL: comment
-        print("[JEL] setupObservers")
-
         // We don't need to unsubscribe because everything will be destroyed when the Set goes out of scope.
         $searchText
             .sink { [weak self] search in
                 self?.searchDidChange(value: search)
             }
             .store(in: &cancellables)
-
     }
 
-    // TODO JEL: docs
+    // TODO JEL: Ideally we would NOT hit the API each time the search string changes... we might debounce for a
+    // couple seconds and wait until the user is done typing. However, the acceptance criteria explicitly says,
+    // "The search results should be updated after each keystroke or change to the search string."
+    /// Call this function when our search value changes.
+    /// - Parameter value: The new value
     private func searchDidChange(value: String) {
         // Clear our search items if the query string is empty. No sense searching for nothing.
         guard !value.isEmpty else {
@@ -65,6 +65,7 @@ class SearchViewModel: ObservableObject {
             return
         }
 
+        // Don't block the main thread
         Task {
             await doSearch(tags: value)
         }
