@@ -1,9 +1,3 @@
-//
-//  Flickr_Search_Code_ChallengeApp.swift
-//  Flickr Search Code Challenge
-//
-//  Created by Jonathan Lepolt on 10/25/23.
-//
 
 import SwiftUI
 
