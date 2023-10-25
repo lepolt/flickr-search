@@ -33,14 +33,6 @@ class SearchViewModel: ObservableObject {
         setupObservers()
     }
 
-    // TODO JEL: <#comment#>
-    // TODO JEL: is loading
-    /// Clears our search text so user doesn't need to backspace away
-//    func clear() {
-//        searchText = ""
-//    }
-
-
     // MARK: - private functions
     
     /// Sets up all our observers so we can react when values change.
@@ -71,7 +63,6 @@ class SearchViewModel: ObservableObject {
         }
     }
 
-    // TODO JEL: input sanitization
     /// Performs the actual search by hitting the Flickr API
     /// - Parameter tags: Tags string to search for. We expect this to be comma-separated
     private func doSearch(tags: String) async {
@@ -82,11 +73,9 @@ class SearchViewModel: ObservableObject {
             // Check for 2xx response from server
             guard let httpResponse = response as? HTTPURLResponse,
                 (200...299).contains(httpResponse.statusCode) else {
-                // TODO JEL: Better error handling.
                 error = "Error parsing response from server"
                 return
             }
-
 
             // TODO JEL: If we have multiple requests that need to decode json and use a custom date strategy, pull
             // this decoder out somewhere and reuse it.

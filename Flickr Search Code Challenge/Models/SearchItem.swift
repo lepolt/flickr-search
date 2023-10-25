@@ -32,8 +32,10 @@ extension SearchItem: Identifiable {
 /// Hashable so we can use `NavigationPath`
 extension SearchItem: Hashable {}
 
-// TODO JEL: make `tags` property array. Custom decoder
-// TODO JEL: I don't like _ in variable names, so I might change that but again it requires a custom decoder
+// TODO JEL: make `tags` property an array of [String]. This requires a custom decoder and at this point it's not worth
+// spending the time to implement.
+// TODO JEL: I don't like "_" in variable names, so I would like to change those names. I could do this pretty easily
+// with coding keys, but am not doing that right now.
 
 // MARK: - SearchItemsResponse
 
